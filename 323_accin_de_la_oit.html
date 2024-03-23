@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.3. Acción de la OIT | UT 4. LA NORMATIVA SOBRE PREVENCIÓN DE RIESGOS LABORALES </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="José Andrés Sanz Ruiz" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.9 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"  type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"  type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"  type="text/css">
+
+
+<style>
+  
+  .z-index {
+    z-index: 999;
+  }
+
+  .select-container {
+    display: inline-block;
+    position: relative;
+    z-index: 999;
+  }
+
+  .font-button {
+    padding: 8px 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 8px;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    z-index: 999;
+  }
+
+  .fontButtonContainer {
+     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* establece el wrap para que los botones se distribuyan en varias líneas */
+    gap: 5px; /* ajusta el espacio entre los botones */
+    position: static; /* fija la barra de botones en la página: static para que aparezca en la parte superior, fixed para que quede flotando */
+    top: 40px; /* fija la barra de botones en la parte superior de la página */
+    left: 0; /* fija la barra de botones en el margen izquierdo */
+    right: 0; /* fija la barra de botones en el margen derecho */
+    margin: auto; /* centra la barra de botones horizontalmente */
+  }
+    
+  /* Estilo para el desplegable */
+  select {
+    padding: 8px 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 6px;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+  }
+  
+  select option {
+  text-align: left;
+  }
+  
+</style>
+
+<script>
+
+// BatexeGo v3 Juan José de Haro 
+
+// Define los textos que se ven en pantalla. Reemplazar el texto entre comillas
+
+  // Textos del menú desplegable
+    const defaultText = 'Parámetros por defecto:'; //Descripción de la opción por defecto
+    const standardText = 'Fuente estándar'; // Fuente original del documento
+    
+    const dyslexicDesc = 'Dislexia:'; // Descripción de la opción OpenDyslexic  
+    const dyslexicText = 'OpenDyslexic'; 
+    
+    const hyperlegibleDesc = 'Deficiencias visuales:'; // Descripción de la opción Atkinson Hyperlegible
+    const hyperlegibleText = 'Atkinson Hyperlegible'; 
+    
+    const highLegibilityDesc = 'Alta legibilidad:'; // Descripción de las opciones de alta legibilidad
+    const opensansText = 'OpenSans'; 
+    const robotoText = 'Roboto'; 
+    const latoText = 'Lato'; 
+    const montserratText = 'Montserrat'; 
+
+  // Botones aumentar y disminuir fuente
+    const increaseFontText = 'A+'; // Botón para incrementar la fuente
+    const increaseFontTitle = 'Incrementa la fuente'; // Texto emergente al pasar el ratón
+    
+    const decreaseFontText = 'A-'; // Botón para reducir la fuente
+    const decreaseFontTitle = 'Reduce la fuente'; // Texto emergente al pasar el ratón
+
+  // Botón para traducir
+    const translateText = '🌐'; // Texto para el botón de traducción de Google
+    const translateTitle = 'Traduce la página'; // Texto emergente al pasar el ratón
+
+  // Botón para leer / detener la lectura en voz alta
+    let readText = 'Leer'; // Botón para leer en voz alta el contenido de la página
+    const readTextTitle ='Lee en voz alta la selección o la página entera'; // Texto emergente al pasar el ratón
+    
+    const stopText = 'Detener'; // Texto del botón para detener la lectura
+    const stopTextTitle = 'Detiene la lectura'; // Texto emergente al pasar el ratón
+  
+  // Botones para que los botones estén siempre visibles
+    let floatingFix = 'Fijar'; // Texto del botón flotante cuando está sobre el texto
+    let floatingFixTitle = 'Fija la barra de botones en la parte superior'; // Texto emergente al pasar el ratón
+    
+    let floatingFloat = 'Flotar'; //Texto del botón flotante cuando está fijo en la parte superior
+    let floatingFloatTitle = 'La barra permanecerá siempre visible';
+  
+  
+  // Enlace +Info
+    const infoText = '+Info'; // Texto del enlace +Info
+    const infoTextLink = 'https://batexego.bilateria.org'; // Destino del enlace de +Info
+
+// Fin 
+  
+
+  readText = `${readText} (${document.documentElement.lang})`; //Se añade el idioma al botón Leer
+  
+
+  let originalFont;
+  let currentFontSize;
+  let originalFontSize;
+  let isReading = false;
+  let utterance = new SpeechSynthesisUtterance();
+  let googleTranslateWidgetVisible = localStorage.getItem('googleTranslateWidgetVisible');
+
+  function setFont(font) {
+  document.body.style.fontFamily = font;
+  localStorage.setItem('font', font);
+  }
+
+  function setFontSize(size) {
+  currentFontSize = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+  currentFontSize += size;
+  document.body.style.fontSize = currentFontSize + 'px';
+  localStorage.setItem('fontSize', currentFontSize + 'px');
+  }
+  
+  
+
+function toggleGoogleTranslateWidget() {
+  if (!googleTranslateWidgetVisible) {
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.id = 'google-translate-script';
+    document.head.appendChild(script);
+    
+    const googleTranslateElement = document.createElement('div');
+    googleTranslateElement.id = 'google_translate_element';
+    googleTranslateElement.style.position = 'fixed';
+    googleTranslateElement.style.top = '0';
+    googleTranslateElement.style.right = '0';
+    googleTranslateElement.style.zIndex = '1000';
+    document.body.appendChild(googleTranslateElement);
+
+    window.googleTranslateElementInit = function() {
+      new google.translate.TranslateElement({pageLanguage: 'auto', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
+    };
+
+    googleTranslateWidgetVisible = true;
+    
+  } else {
+    const script = document.getElementById('google-translate-script');
+    script.remove();
+    
+    const googleTranslateElement = document.getElementById('google_translate_element');
+    googleTranslateElement.remove();
+
+    googleTranslateWidgetVisible = false;
+  }
+  localStorage.setItem('googleTranslateWidgetVisible',googleTranslateWidgetVisible);
+}
+
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    googleTranslateWidgetVisible = JSON.parse(localStorage.getItem('googleTranslateWidgetVisible'));
+  if(googleTranslateWidgetVisible) {
+    googleTranslateWidgetVisible = false;
+    toggleGoogleTranslateWidget();
+  }
+
+    
+  
+    originalFont = window.getComputedStyle(document.body).getPropertyValue('font-family');
+    localStorage.setItem('originalFont', originalFont);
+    let font = localStorage.getItem('font');
+    if (!font) {
+    font = originalFont;
+    }
+    document.body.style.fontFamily = font;
+
+    let fontSize = localStorage.getItem('fontSize');
+    originalFontSize = window.getComputedStyle(document.body).getPropertyValue('font-size');
+    localStorage.setItem('originalFontSize', originalFontSize);
+    if (!fontSize) {
+    fontSize = originalFontSize
+    localStorage.setItem('fontSize', fontSize);
+    }
+    document.body.style.fontSize = fontSize;
+
+    const fontButtonContainer = document.createElement('div');
+    fontButtonContainer.classList.add('fontButtonContainer'); 
+    
+    const selectContainer = document.createElement('div');
+    selectContainer.classList.add('select-container');
+    const select = document.createElement('select');
+    select.classList.add('z-index');
+    const standardOption = document.createElement('option');
+    standardOption.value = 'standard';
+    standardOption.text = standardText;
+
+    const defaultFontOptGroup = document.createElement('optgroup');
+    defaultFontOptGroup.label = defaultText;
+    defaultFontOptGroup.appendChild(standardOption);
+
+    select.appendChild(defaultFontOptGroup);
+
+
+    const dyslexicOption = document.createElement('option');
+    dyslexicOption.value = 'dyslexic';
+    dyslexicOption.text = dyslexicText;
+    select.add(dyslexicOption);
+
+    const dyslexicOptGroup = document.createElement('optgroup');
+    dyslexicOptGroup.label = dyslexicDesc;
+    dyslexicOptGroup.appendChild(dyslexicOption);
+    select.appendChild(dyslexicOptGroup);
+
+    const hyperlegibleOption = document.createElement('option');
+    hyperlegibleOption.value = 'hyperlegible';
+    hyperlegibleOption.text = hyperlegibleText;
+    select.add(hyperlegibleOption);
+
+    const hyperlegibleOptGroup = document.createElement('optgroup');
+    hyperlegibleOptGroup.label = hyperlegibleDesc;
+    hyperlegibleOptGroup.appendChild(hyperlegibleOption);
+    select.appendChild(hyperlegibleOptGroup);
+
+    const opensansOption = document.createElement('option');
+    opensansOption.value = 'Open Sans';
+    opensansOption.text = opensansText;
+    select.add(opensansOption);
+
+    const robotoOption = document.createElement('option');
+    robotoOption.value = 'Roboto';
+    robotoOption.text = robotoText;
+    select.add(robotoOption);
+
+    const latoOption = document.createElement('option');
+    latoOption.value = 'Lato';
+    latoOption.text = latoText;
+    select.add(latoOption);
+
+    const montserratOption = document.createElement('option');
+    montserratOption.value = 'Montserrat';
+    montserratOption.text = montserratText;
+    select.add(montserratOption);  
+    
+
+    const highLegibilityOptGroup = document.createElement('optgroup');
+    highLegibilityOptGroup.label = highLegibilityDesc;
+    highLegibilityOptGroup.appendChild(latoOption);
+    highLegibilityOptGroup.appendChild(montserratOption);
+    highLegibilityOptGroup.appendChild(opensansOption);
+    highLegibilityOptGroup.appendChild(robotoOption);
+    
+    
+    
+    select.appendChild(highLegibilityOptGroup);
+
+    // Seleccionar la opción correspondiente al cargar la página
+    if (font === originalFont) { // Nueva condición
+    select.selectedIndex = 0; // Nueva línea
+    } else if (font === 'OpenDyslexic') {
+    select.selectedIndex = 1;
+    } else if (font === 'Atkinson Hyperlegible') {
+    select.selectedIndex = 2;
+    } else if (font === 'Roboto') {
+    select.selectedIndex = 6;
+    } else if (font === 'Lato') {
+    select.selectedIndex = 3;
+    } else if (font === 'Open Sans') {
+    select.selectedIndex = 5;
+    } else if (font === 'Montserrat') {
+    select.selectedIndex = 4;
+    }
+
+    select.addEventListener('change', () => {
+    const font = select.value;
+    if (font === 'standard') {
+    setFont(originalFont);
+    fontSize = originalFontSize;
+    localStorage.setItem('fontSize', fontSize);
+    document.body.style.fontSize = localStorage.getItem('originalFontSize');
+    } else if (font === 'dyslexic') {
+    setFont('OpenDyslexic');
+    } else if (font === 'hyperlegible') {
+    setFont('Atkinson Hyperlegible');
+    } else if (font === 'Open Sans') {
+    setFont('Open Sans');
+    } else if (font === 'Roboto') {
+    setFont('Roboto');
+    } else if (font === 'Lato') {
+    setFont('Lato');
+    }  else if (font === 'Montserrat') {
+    setFont('Montserrat');
+    }
+    });
+
+    selectContainer.appendChild(select);
+    fontButtonContainer.appendChild(selectContainer);
+    
+
+    const increaseFontButton = document.createElement('button');
+    increaseFontButton.classList.add('font-button');
+    increaseFontButton.textContent = increaseFontText;
+    increaseFontButton.setAttribute('title', increaseFontTitle);
+    increaseFontButton.addEventListener('click', () => setFontSize(1));
+    fontButtonContainer.appendChild(increaseFontButton);
+
+    const decreaseFontButton = document.createElement('button');
+    decreaseFontButton.classList.add('font-button');
+    decreaseFontButton.textContent = decreaseFontText;
+    decreaseFontButton.setAttribute('title', decreaseFontTitle);
+    decreaseFontButton.addEventListener('click', () => setFontSize(-1));
+    fontButtonContainer.appendChild(decreaseFontButton);
+    
+    const translateButton = document.createElement('button');
+    translateButton.classList.add('font-button');
+    translateButton.textContent = translateText;
+    translateButton.setAttribute('title', translateTitle);
+    translateButton.addEventListener('click', toggleGoogleTranslateWidget);
+    fontButtonContainer.appendChild(translateButton);
+
+  // Botón para leer en voz alta
+    const readButton = document.createElement('button');
+    readButton.classList.add('font-button');
+    readButton.textContent = readText;
+    readButton.setAttribute('title', readTextTitle);
+    
+    readButton.addEventListener('click', () => {
+    let selectedText = window.getSelection().toString();
+    let text = '';
+    let lang = document.documentElement.lang;
+    if (selectedText !== '') {
+      text = selectedText;
+      let selectedNode = window.getSelection().anchorNode;
+      while (selectedNode && selectedNode.nodeType !== Node.ELEMENT_NODE) {
+        selectedNode = selectedNode.parentNode;
+      }
+      if (selectedNode) {
+        const selectedLang = selectedNode.getAttribute('lang');
+        if (selectedLang) {
+          lang = selectedLang;
+        }
+      }
+    } else {
+      text = document.body.innerText;
+      const bodyLang = document.body.getAttribute('lang');
+      if (bodyLang) {
+        lang = bodyLang;
+      }
+    }
+
+    utterance.lang = lang;
+    utterance.text = text;
+
+    if (!isReading) {
+      isReading = true;
+      readButton.textContent = `${stopText} (${lang})`;
+      readButton.setAttribute('title', stopTextTitle);
+      speechSynthesis.speak(utterance);
+    } else {
+      isReading = false;
+      readButton.textContent = readText;
+      readButton.setAttribute('title', readTextTitle);
+      speechSynthesis.cancel();
+    }
+
+    utterance.addEventListener('end', () => {
+      isReading = false;
+      readButton.textContent = readText;
+      readButton.setAttribute('title', readTextTitle);
+    });
+  });  
+    
+    fontButtonContainer.appendChild(readButton);
+    
+  // Botón para que la barra esté siempre visible
+    const floatingButton = document.createElement('button');
+    floatingButton.classList.add('font-button');
+    floatingButton.textContent = floatingFloat;
+    floatingButton.setAttribute('title', floatingFloatTitle);
+    floatingButton.addEventListener('click', () => {
+    if (floatingButton.textContent === floatingFix) {
+      fontButtonContainer.style.position = 'static';
+      floatingButton.textContent = floatingFloat;
+      floatingButton.setAttribute('title', floatingFloatTitle);
+      localStorage.setItem('floatState', 'static');
+    } else {
+      fontButtonContainer.style.position = 'fixed';
+      floatingButton.textContent = floatingFix;
+      floatingButton.setAttribute('title', floatingFixTitle);
+      localStorage.setItem('floatState', 'fixed');
+    }
+  });
+
+    
+
+    let floatState = localStorage.getItem('floatState');
+    if (!floatState) {
+      floatState = 'static';
+      floatingButton.textContent = floatingFix;
+      floatingButton.setAttribute('title', floatingFixTitle);
+    }
+    if (floatState === 'fixed') {
+      fontButtonContainer.style.position = 'fixed';
+      floatingButton.textContent = floatingFix;
+      floatingButton.setAttribute('title', floatingFixTitle);
+    } else {
+      fontButtonContainer.style.position = 'static';
+      floatingButton.textContent = floatingFloat;
+      floatingButton.setAttribute('title', floatingFloatTitle);
+    }
+    
+    localStorage.setItem('floatState', floatState);
+    
+  fontButtonContainer.appendChild(floatingButton);
+
+
+    const infoLink = document.createElement('a');
+    infoLink.textContent = infoText;
+    infoLink.href = infoTextLink;
+    infoLink.target = '_blank';
+    infoLink.style.marginLeft = '8px';
+    infoLink.style.fontSize = '12px';
+    fontButtonContainer.appendChild(infoLink);
+
+    
+    infoLink.classList.add('z-index');
+
+    document.body.insertBefore(fontButtonContainer, document.body.firstChild);
+   
+  });
+  
+  
+
+</script>
+</head>
+<body class="exe-web-site" id="exe-node-21"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UT 4. LA NORMATIVA SOBRE PREVENCIÓN DE RIESGOS LABORALES</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT 4. La normativa sobre prevención de riesgos laborales</a></li>
+   <li><a href="1_antecedentes_histricos_de_la_prevencin_de_riesgos_laborales.html" class="no-ch">1. Antecedentes históricos de la prevención de riesgos laborales</a></li>
+   <li><a href="2_la_regulacin_de_la_prevencin_de_riesgos_laborales.html" class="no-ch">2. La regulación de la prevención de riesgos laborales</a></li>
+   <li class="current-page-parent"><a href="3_la_normativa_internacional.html" class="current-page-parent daddy">3. La normativa internacional</a>
+   <ul>
+      <li><a href="31_declaraciones_institucionales_de_la_onu.html" class="no-ch">3.1. Declaraciones institucionales de la ONU</a></li>
+      <li class="current-page-parent"><a href="32_la_oit.html" class="current-page-parent daddy">3.2. La OIT</a>
+      <ul>
+         <li><a href="321_miembros_de_la_oit.html" class="no-ch">3.2.1. Miembros de la OIT</a></li>
+         <li><a href="322_estructura_de_la_oit.html" class="no-ch">3.2.2. Estructura de la OIT</a></li>
+         <li id="active"><a href="323_accin_de_la_oit.html" class="active no-ch">3.2.3. Acción de la OIT</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_la_normativa_europea.html" class="daddy">4. La normativa europea</a>
+   <ul class="other-section">
+      <li><a href="41_la_unin_europea.html" class="no-ch">4.1. La Unión Europea</a></li>
+      <li><a href="42_los_rganos_comunitarios.html" class="no-ch">4.2. Los órganos comunitarios</a></li>
+      <li><a href="43_normas_comunitarias.html" class="no-ch">4.3. Normas comunitarias</a></li>
+      <li><a href="44_normativa_comunitaria_sobre_prevencin_de_riesgos_laborales.html" class="no-ch">4.4. Normativa comunitaria sobre prevención de riesgos laborales</a></li>
+      <li><a href="45_la_agencia_europea_sobre_seguridad_y_salud_en_el_trabajo.html" class="no-ch">4.5. La agencia europea sobre seguridad y salud en el trabajo</a></li>
+   </ul>
+   </li>
+   <li><a href="5_la_normativa_espaola_sobre_prevencin_de_riesgos_laborales.html" class="daddy">5. La normativa española sobre prevención de riesgos laborales</a>
+   <ul class="other-section">
+      <li><a href="51_antecedentes_histricos_y_legislativos.html" class="no-ch">5.1. Antecedentes históricos y legislativos</a></li>
+      <li><a href="52_la_ley_3195_de_prevencin_de_riesgos_laborales.html" class="daddy">5.2. La ley 31/95 de prevención de riesgos laborales</a>
+      <ul class="other-section">
+         <li><a href="521_objeto_de_la_lprl.html" class="no-ch">5.2.1. Objeto de la LPRL</a></li>
+         <li><a href="522_estructura_de_la_lprl.html" class="no-ch">5.2.2. Estructura de la LPRL</a></li>
+         <li><a href="523_mbito_de_aplicacin_de_la_lprl.html" class="no-ch">5.2.3. Ámbito de aplicación de la LPRL</a></li>
+         <li><a href="524_definiciones_y_conceptos.html" class="no-ch">5.2.4. Definiciones y conceptos</a></li>
+      </ul>
+      </li>
+      <li><a href="53_reglamentos_de_desarrollo_de_la_lprl.html" class="no-ch">5.3. Reglamentos de desarrollo de la LPRL</a></li>
+      <li><a href="54_los_convenios_colectivos.html" class="no-ch">5.4. Los convenios colectivos</a></li>
+   </ul>
+   </li>
+   <li><a href="6_otras_normas_de_carcter_preventivo.html" class="no-ch">6. Otras normas de carácter preventivo</a></li>
+   <li><a href="anexo_i_directivas_especficas_que_desarrollan_la_directiva_89391cee.html" class="no-ch">Anexo I. Directivas específicas que desarrollan la Directiva 89/391/CEE</a></li>
+   <li><a href="anexo_ii_reglamentos_de_desarrollo_de_la_ley_de_prevencin_de_riesgos_laborales_y_reglamentos_anexos.html" class="no-ch">Anexo II. Reglamentos de desarrollo de la Ley de Prevención de Riesgos Laborales y reglamentos anexos</a></li>
+   <li><a href="_ficha_tcnica_y_descarga_.html" class="no-ch">- Ficha técnica y descarga -</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="322_estructura_de_la_oit.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_la_normativa_europea.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.2.3. Acción de la OIT</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id17">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle"> </h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta17_129_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">La <strong>acción de la OIT</strong> tiene por fin la mejora de las condiciones de vida y trabajo de los trabajadores en el plano internacional. Para lograr este objetivo cuenta con dos importantes instrumentos: uno jurídico, la adopción de <strong>Convenios</strong> y <strong>Recomendaciones</strong>, y otro técnico, los programas de asistencia a los países y entidades que la requieran.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id18">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Los convenios de la OIT</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta18_130_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">El <strong>Convenio de la OIT</strong> es una norma internacional en cuanto a su origen, pero su eficacia interna en cada país está condicionada al acto de ratificación del Convenio por la autoridad competente del estado.</p>
+<p style="text-align: justify;">La <strong>elaboración</strong> del Convenio consta de diversas fases:</p>
+<ul>
+<li style="text-align: justify;"><strong>Iniciativa:</strong> en las que uno o más gobiernos de los Estados miembros, o una o más organizaciones sindicales o empresariales con representación en la OIT, proponen al Consejo de Administración la adopción de un Convenio.</li>
+<li style="text-align: justify;"><strong>Consulta:</strong> que tiene lugar cuando, tomada en cuenta la propuesta por el Consejo de Administración, éste dirige a través de la Oficina Internacional del Trabajo una encuesta a los Estados miembros, con los resultados de la encuesta se elabora un texto, que se remite nuevamente a los estados miembros.</li>
+<li style="text-align: justify;"><strong>Discusión y votación:</strong> se hará en comisión, y, posteriormente, se hará en el pleno de la conferencia. Para que el convenio quede aprobado se exige una mayoría de <strong>dos tercios de los votos emitidos</strong> por los delegados presentes en la reunión.</li>
+</ul>
+<p style="text-align: justify;">La <strong>eficacia jurídica</strong> del Convenio puede contemplarse en tres planos:</p>
+<ul>
+<li style="text-align: justify;">La adopción del convenio <strong>obliga</strong> a los Estados miembros de la OIT <strong>a someter su texto, en el plazo de un año, a la consideración de la autoridad estatal</strong> a la que competa el acto de la ratificación, quien <strong>no está obligada a su ratificación</strong>, pero que sí deberá informar, periódicamente, al Director de la OIT sobre las razones que obstaculizan la ratificación.</li>
+<li style="text-align: justify;">El Convenio surte efectos en el Derecho interno cuando se procede a su ratificación y publicación oficial.</li>
+<li style="text-align: justify;">En cuanto a su rango jerárquico, la Constitución viene a confirmar la doctrina según la cual el Tratado Internacional publicado oficialmente en España goza de prelación sobre cualesquiera disposiciones.</li>
+</ul>
+<p style="text-align: justify;">La OIT ha publicado hasta la actualidad un total de <a href="https://www.ilo.org/dyn/normlex/es/f?p=NORMLEXPUB:12000:0::NO::P12000_INSTRUMENT_SORT:4">191 convenios</a> referidos a los asuntos más diversos relacionados con el mundo del trabajo, la seguridad y salud laboral, la situación de la mujer y los niños, sobre el trabajo nocturno, sobre las agencias de empleo privadas, sobre el derecho de asociación, y otros muchos temas.</p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Por su importancia, requiere especial mención el </span><a href="https://www.ilo.org/dyn/normlex/es/f?p=NORMLEXPUB:12100:0::NO:12100:P12100_INSTRUMENT_ID:312300:NO">Convenio 155 sobre “Seguridad y Salud de los trabajadores y medio ambiente de trabajo"</a><span style="font-weight: 400;">, aprobado en 1981 y ratificado por España en 1985 . Este convenio es importante por dos razones:</span></p>
+<ol>
+<li style="text-align: justify;"><span style="font-weight: 400;">Porque trata el tema de la seguridad en el trabajo con </span><b>carácter general</b><span style="font-weight: 400;">, fijando los criterios que deben inspirar la legislación propia de cada país sobre la materia, así como los objetivos a conseguir por la misma.</span></li>
+<li style="text-align: justify;">Porque, junto con la <a href="https://www.boe.es/buscar/doc.php?id=DOUE-L-1989-80648">Directiva de la CEE 89/391</a>, el convenio 155 ha servido de <b style="color: #333333; font-size: 1.05em;">base</b><span style="font-weight: 400;"> para la redacción de la vigente <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1995-24292">Ley 31/1995 de Prevención de Riesgos Laborales</a> (</span><b style="color: #333333; font-size: 1.05em;">LPRL</b>)<span style="font-weight: 400;">.</span></li>
+</ol>
+<table border="1" style="width: 64.6392%; height: 26px;" class="exe-table">
+<tbody>
+<tr style="height: 26px;">
+<td style="width: 100%; background-color: #bfe3e0; text-align: center; height: 26px;"><span style="font-weight: 400;"><a href="https://noticias.juridicas.com/actualidad/noticias/17295-espana-ratifica-el-convenio-de-la-oit-sobre-trabajo-a-domicilio/">España ratifica el Convenio 177 de la OIT sobre trabajo a domicilio</a></span></td>
+</tr>
+</tbody>
+</table>
+<table border="1" style="width: 64.6392%; height: 26px;" class="exe-table">
+<tbody>
+<tr style="height: 26px;">
+<td style="width: 100%; background-color: #bfe3e0; text-align: center; height: 26px;"><span style="font-weight: 400;"><a href="https://www.eldiario.es/economia/espana-ratifica-convenio-189-oit-amplia-derechos-laborales-trabajadoras-hogar_1_9068990.html">España ratifica el Convenio 189 de la OIT que amplía derechos a las trabajadoras del hogar</a></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id19">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Las recomendaciones de la OIT</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta19_131_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Son <strong>meras propuestas, desprovistas de todo carácter vinculante</strong>, dirigidas a los Estados miembros, ya que sólo obligan a éstos a informar al Director de la OIT sobre el estado de la respectiva legislación interna y sobre el grado de observancia de lo recomendado.</p>
+<p style="text-align: justify;">Pueden operar como <strong>criterios aclaratorios de los convenios</strong> de la propia OIT. Reciben el nombre de Recomendaciones aquellos acuerdos que por la índole de la cuestión tratada o alguno de sus aspectos, no se presten, en el momento de dictarse, a adoptar la forma de convenio.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id20">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Resoluciones de la OIT</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta20_132_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Si bien el Reglamento de la Conferencia de la OIT distingue entre las Resoluciones que entrañen consecuencias jurídicas y las que no las impliquen, las Resoluciones generales de la Conferencia de la OIT expresan simplemente la<strong> opinión o criterio de la Organización</strong> sobre determinadas materias; en consecuencia, carecen de obligatoriedad alguna, y suelen ser meras anticipaciones de futuras Recomendaciones y Convenios, formuladas por vía de exhortación o invitación.</p>
+<p style="text-align: justify;">Las Resoluciones se producen cuando en la adopción de acuerdos no se obtiene más que mayoría simple. Su <strong>eficacia en el ordenamiento jurídico interno es nula</strong> y no pasan de ser opiniones de la OIT.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper MultichoiceIdevice em_iDevice em_iDevice_question" id="id52">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Pregunta de Elección Múltiple</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section class="question">
+<form name="multi-choice-form-52_86" action="#" onsubmit="return false" class="activity-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion52_86" class="block question iDevice_content">
+<p><strong>Señala la respuesta correcta en relación a la acción de la OIT:</strong></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i52_89" class="sr-av"><a href="#answer-52_89">Opción 1</a></label><input type="radio" name="option52_86" id="i52_89" class="exe-radio-option exe-radio-option-0-4-52_86-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-52_89"><div id="taans52_89" class="block iDevice_content">
+<p>Los convenios de la OIT tienen eficacia jurídica inmediata</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i52_92" class="sr-av"><a href="#answer-52_92">Opción 2</a></label><input type="radio" name="option52_86" id="i52_92" class="exe-radio-option exe-radio-option-1-4-52_86-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-52_92"><div id="taans52_92" class="block iDevice_content">
+<p>Las recomendaciones de la OIT son simples opiniones o criterios de la OIT sobre determinadas materias</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i52_386" class="sr-av"><a href="#answer-52_386">Opción 3</a></label><input type="radio" name="option52_86" id="i52_386" class="exe-radio-option exe-radio-option-2-4-52_86-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-52_386"><div id="taans52_386" class="block iDevice_content">
+<p>Para aprobar los convenios es necesario mayoría absoluta de los votos de la Conferencia Internacional del Trabajo</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i52_389" class="sr-av"><a href="#answer-52_389">Opción 4</a></label><input type="radio" name="option52_86" id="i52_389" class="exe-radio-option exe-radio-option-3-4-52_86-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-52_389"><div id="taans52_389" class="block iDevice_content">
+<p>Ninguna es correcta.</p>
+</div>
+</div>
+</section>
+</section>
+<section class="iDevice_feedbacks js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<section id="sa0b52_86" class="feedback js-hidden">
+<div id="taf52_89" class=" iDevice_content">
+<p>No es correcto. Los convenios de la OIT tienen que ser sometidos a ratificación por los estados miembros en sus respectivos países para que tengan eficacia jurídica.</p>
+</div>
+</section>
+<section id="sa1b52_86" class="feedback js-hidden">
+<div id="taf52_92" class=" iDevice_content">
+<p>Incorrecto. Las resoluciones de la OIT son las opiniones o criterios de la OIT sobre determinadas materias.</p>
+</div>
+</section>
+<section id="sa2b52_86" class="feedback js-hidden">
+<div id="taf52_386" class=" iDevice_content">
+<p>No es verdad. Es necesario una mayoría de <strong>dos tercios</strong>.</p>
+</div>
+</section>
+<section id="sa3b52_86" class="feedback js-hidden">
+<div id="taf52_389" class=" iDevice_content">
+<p>Correcto.</p>
+</div>
+</section>
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-52_89">Incorrecto</a><span> (<a href="#sa0b52_86">Retroalimentación</a>)</span></li>
+<li><a href="#answer-52_92">Incorrecto</a><span> (<a href="#sa1b52_86">Retroalimentación</a>)</span></li>
+<li><a href="#answer-52_386">Incorrecto</a><span> (<a href="#sa2b52_86">Retroalimentación</a>)</span></li>
+<li><a href="#answer-52_389">Opción correcta</a><span> (<a href="#sa3b52_86">Retroalimentación</a>)</span></li>
+</ol>
+</section>
+</section>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="322_estructura_de_la_oit.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_la_normativa_europea.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_cedec_js.js"></script></body></html>

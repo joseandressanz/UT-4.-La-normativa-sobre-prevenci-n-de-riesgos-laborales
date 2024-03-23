@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.2. Estructura de la OIT | UT 4. LA NORMATIVA SOBRE PREVENCIÓN DE RIESGOS LABORALES </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="José Andrés Sanz Ruiz" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.9 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<link rel="stylesheet" type="text/css" href="relaciona-activity.css" />
+<script type="text/javascript" src="relaciona-activity.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"  type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"  type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"  type="text/css">
+
+
+<style>
+  
+  .z-index {
+    z-index: 999;
+  }
+
+  .select-container {
+    display: inline-block;
+    position: relative;
+    z-index: 999;
+  }
+
+  .font-button {
+    padding: 8px 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 8px;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    z-index: 999;
+  }
+
+  .fontButtonContainer {
+     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* establece el wrap para que los botones se distribuyan en varias líneas */
+    gap: 5px; /* ajusta el espacio entre los botones */
+    position: static; /* fija la barra de botones en la página: static para que aparezca en la parte superior, fixed para que quede flotando */
+    top: 40px; /* fija la barra de botones en la parte superior de la página */
+    left: 0; /* fija la barra de botones en el margen izquierdo */
+    right: 0; /* fija la barra de botones en el margen derecho */
+    margin: auto; /* centra la barra de botones horizontalmente */
+  }
+    
+  /* Estilo para el desplegable */
+  select {
+    padding: 8px 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 6px;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+  }
+  
+  select option {
+  text-align: left;
+  }
+  
+</style>
+
+<script>
+
+// BatexeGo v3 Juan José de Haro 
+
+// Define los textos que se ven en pantalla. Reemplazar el texto entre comillas
+
+  // Textos del menú desplegable
+    const defaultText = 'Parámetros por defecto:'; //Descripción de la opción por defecto
+    const standardText = 'Fuente estándar'; // Fuente original del documento
+    
+    const dyslexicDesc = 'Dislexia:'; // Descripción de la opción OpenDyslexic  
+    const dyslexicText = 'OpenDyslexic'; 
+    
+    const hyperlegibleDesc = 'Deficiencias visuales:'; // Descripción de la opción Atkinson Hyperlegible
+    const hyperlegibleText = 'Atkinson Hyperlegible'; 
+    
+    const highLegibilityDesc = 'Alta legibilidad:'; // Descripción de las opciones de alta legibilidad
+    const opensansText = 'OpenSans'; 
+    const robotoText = 'Roboto'; 
+    const latoText = 'Lato'; 
+    const montserratText = 'Montserrat'; 
+
+  // Botones aumentar y disminuir fuente
+    const increaseFontText = 'A+'; // Botón para incrementar la fuente
+    const increaseFontTitle = 'Incrementa la fuente'; // Texto emergente al pasar el ratón
+    
+    const decreaseFontText = 'A-'; // Botón para reducir la fuente
+    const decreaseFontTitle = 'Reduce la fuente'; // Texto emergente al pasar el ratón
+
+  // Botón para traducir
+    const translateText = '🌐'; // Texto para el botón de traducción de Google
+    const translateTitle = 'Traduce la página'; // Texto emergente al pasar el ratón
+
+  // Botón para leer / detener la lectura en voz alta
+    let readText = 'Leer'; // Botón para leer en voz alta el contenido de la página
+    const readTextTitle ='Lee en voz alta la selección o la página entera'; // Texto emergente al pasar el ratón
+    
+    const stopText = 'Detener'; // Texto del botón para detener la lectura
+    const stopTextTitle = 'Detiene la lectura'; // Texto emergente al pasar el ratón
+  
+  // Botones para que los botones estén siempre visibles
+    let floatingFix = 'Fijar'; // Texto del botón flotante cuando está sobre el texto
+    let floatingFixTitle = 'Fija la barra de botones en la parte superior'; // Texto emergente al pasar el ratón
+    
+    let floatingFloat = 'Flotar'; //Texto del botón flotante cuando está fijo en la parte superior
+    let floatingFloatTitle = 'La barra permanecerá siempre visible';
+  
+  
+  // Enlace +Info
+    const infoText = '+Info'; // Texto del enlace +Info
+    const infoTextLink = 'https://batexego.bilateria.org'; // Destino del enlace de +Info
+
+// Fin 
+  
+
+  readText = `${readText} (${document.documentElement.lang})`; //Se añade el idioma al botón Leer
+  
+
+  let originalFont;
+  let currentFontSize;
+  let originalFontSize;
+  let isReading = false;
+  let utterance = new SpeechSynthesisUtterance();
+  let googleTranslateWidgetVisible = localStorage.getItem('googleTranslateWidgetVisible');
+
+  function setFont(font) {
+  document.body.style.fontFamily = font;
+  localStorage.setItem('font', font);
+  }
+
+  function setFontSize(size) {
+  currentFontSize = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+  currentFontSize += size;
+  document.body.style.fontSize = currentFontSize + 'px';
+  localStorage.setItem('fontSize', currentFontSize + 'px');
+  }
+  
+  
+
+function toggleGoogleTranslateWidget() {
+  if (!googleTranslateWidgetVisible) {
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.id = 'google-translate-script';
+    document.head.appendChild(script);
+    
+    const googleTranslateElement = document.createElement('div');
+    googleTranslateElement.id = 'google_translate_element';
+    googleTranslateElement.style.position = 'fixed';
+    googleTranslateElement.style.top = '0';
+    googleTranslateElement.style.right = '0';
+    googleTranslateElement.style.zIndex = '1000';
+    document.body.appendChild(googleTranslateElement);
+
+    window.googleTranslateElementInit = function() {
+      new google.translate.TranslateElement({pageLanguage: 'auto', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
+    };
+
+    googleTranslateWidgetVisible = true;
+    
+  } else {
+    const script = document.getElementById('google-translate-script');
+    script.remove();
+    
+    const googleTranslateElement = document.getElementById('google_translate_element');
+    googleTranslateElement.remove();
+
+    googleTranslateWidgetVisible = false;
+  }
+  localStorage.setItem('googleTranslateWidgetVisible',googleTranslateWidgetVisible);
+}
+
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    googleTranslateWidgetVisible = JSON.parse(localStorage.getItem('googleTranslateWidgetVisible'));
+  if(googleTranslateWidgetVisible) {
+    googleTranslateWidgetVisible = false;
+    toggleGoogleTranslateWidget();
+  }
+
+    
+  
+    originalFont = window.getComputedStyle(document.body).getPropertyValue('font-family');
+    localStorage.setItem('originalFont', originalFont);
+    let font = localStorage.getItem('font');
+    if (!font) {
+    font = originalFont;
+    }
+    document.body.style.fontFamily = font;
+
+    let fontSize = localStorage.getItem('fontSize');
+    originalFontSize = window.getComputedStyle(document.body).getPropertyValue('font-size');
+    localStorage.setItem('originalFontSize', originalFontSize);
+    if (!fontSize) {
+    fontSize = originalFontSize
+    localStorage.setItem('fontSize', fontSize);
+    }
+    document.body.style.fontSize = fontSize;
+
+    const fontButtonContainer = document.createElement('div');
+    fontButtonContainer.classList.add('fontButtonContainer'); 
+    
+    const selectContainer = document.createElement('div');
+    selectContainer.classList.add('select-container');
+    const select = document.createElement('select');
+    select.classList.add('z-index');
+    const standardOption = document.createElement('option');
+    standardOption.value = 'standard';
+    standardOption.text = standardText;
+
+    const defaultFontOptGroup = document.createElement('optgroup');
+    defaultFontOptGroup.label = defaultText;
+    defaultFontOptGroup.appendChild(standardOption);
+
+    select.appendChild(defaultFontOptGroup);
+
+
+    const dyslexicOption = document.createElement('option');
+    dyslexicOption.value = 'dyslexic';
+    dyslexicOption.text = dyslexicText;
+    select.add(dyslexicOption);
+
+    const dyslexicOptGroup = document.createElement('optgroup');
+    dyslexicOptGroup.label = dyslexicDesc;
+    dyslexicOptGroup.appendChild(dyslexicOption);
+    select.appendChild(dyslexicOptGroup);
+
+    const hyperlegibleOption = document.createElement('option');
+    hyperlegibleOption.value = 'hyperlegible';
+    hyperlegibleOption.text = hyperlegibleText;
+    select.add(hyperlegibleOption);
+
+    const hyperlegibleOptGroup = document.createElement('optgroup');
+    hyperlegibleOptGroup.label = hyperlegibleDesc;
+    hyperlegibleOptGroup.appendChild(hyperlegibleOption);
+    select.appendChild(hyperlegibleOptGroup);
+
+    const opensansOption = document.createElement('option');
+    opensansOption.value = 'Open Sans';
+    opensansOption.text = opensansText;
+    select.add(opensansOption);
+
+    const robotoOption = document.createElement('option');
+    robotoOption.value = 'Roboto';
+    robotoOption.text = robotoText;
+    select.add(robotoOption);
+
+    const latoOption = document.createElement('option');
+    latoOption.value = 'Lato';
+    latoOption.text = latoText;
+    select.add(latoOption);
+
+    const montserratOption = document.createElement('option');
+    montserratOption.value = 'Montserrat';
+    montserratOption.text = montserratText;
+    select.add(montserratOption);  
+    
+
+    const highLegibilityOptGroup = document.createElement('optgroup');
+    highLegibilityOptGroup.label = highLegibilityDesc;
+    highLegibilityOptGroup.appendChild(latoOption);
+    highLegibilityOptGroup.appendChild(montserratOption);
+    highLegibilityOptGroup.appendChild(opensansOption);
+    highLegibilityOptGroup.appendChild(robotoOption);
+    
+    
+    
+    select.appendChild(highLegibilityOptGroup);
+
+    // Seleccionar la opción correspondiente al cargar la página
+    if (font === originalFont) { // Nueva condición
+    select.selectedIndex = 0; // Nueva línea
+    } else if (font === 'OpenDyslexic') {
+    select.selectedIndex = 1;
+    } else if (font === 'Atkinson Hyperlegible') {
+    select.selectedIndex = 2;
+    } else if (font === 'Roboto') {
+    select.selectedIndex = 6;
+    } else if (font === 'Lato') {
+    select.selectedIndex = 3;
+    } else if (font === 'Open Sans') {
+    select.selectedIndex = 5;
+    } else if (font === 'Montserrat') {
+    select.selectedIndex = 4;
+    }
+
+    select.addEventListener('change', () => {
+    const font = select.value;
+    if (font === 'standard') {
+    setFont(originalFont);
+    fontSize = originalFontSize;
+    localStorage.setItem('fontSize', fontSize);
+    document.body.style.fontSize = localStorage.getItem('originalFontSize');
+    } else if (font === 'dyslexic') {
+    setFont('OpenDyslexic');
+    } else if (font === 'hyperlegible') {
+    setFont('Atkinson Hyperlegible');
+    } else if (font === 'Open Sans') {
+    setFont('Open Sans');
+    } else if (font === 'Roboto') {
+    setFont('Roboto');
+    } else if (font === 'Lato') {
+    setFont('Lato');
+    }  else if (font === 'Montserrat') {
+    setFont('Montserrat');
+    }
+    });
+
+    selectContainer.appendChild(select);
+    fontButtonContainer.appendChild(selectContainer);
+    
+
+    const increaseFontButton = document.createElement('button');
+    increaseFontButton.classList.add('font-button');
+    increaseFontButton.textContent = increaseFontText;
+    increaseFontButton.setAttribute('title', increaseFontTitle);
+    increaseFontButton.addEventListener('click', () => setFontSize(1));
+    fontButtonContainer.appendChild(increaseFontButton);
+
+    const decreaseFontButton = document.createElement('button');
+    decreaseFontButton.classList.add('font-button');
+    decreaseFontButton.textContent = decreaseFontText;
+    decreaseFontButton.setAttribute('title', decreaseFontTitle);
+    decreaseFontButton.addEventListener('click', () => setFontSize(-1));
+    fontButtonContainer.appendChild(decreaseFontButton);
+    
+    const translateButton = document.createElement('button');
+    translateButton.classList.add('font-button');
+    translateButton.textContent = translateText;
+    translateButton.setAttribute('title', translateTitle);
+    translateButton.addEventListener('click', toggleGoogleTranslateWidget);
+    fontButtonContainer.appendChild(translateButton);
+
+  // Botón para leer en voz alta
+    const readButton = document.createElement('button');
+    readButton.classList.add('font-button');
+    readButton.textContent = readText;
+    readButton.setAttribute('title', readTextTitle);
+    
+    readButton.addEventListener('click', () => {
+    let selectedText = window.getSelection().toString();
+    let text = '';
+    let lang = document.documentElement.lang;
+    if (selectedText !== '') {
+      text = selectedText;
+      let selectedNode = window.getSelection().anchorNode;
+      while (selectedNode && selectedNode.nodeType !== Node.ELEMENT_NODE) {
+        selectedNode = selectedNode.parentNode;
+      }
+      if (selectedNode) {
+        const selectedLang = selectedNode.getAttribute('lang');
+        if (selectedLang) {
+          lang = selectedLang;
+        }
+      }
+    } else {
+      text = document.body.innerText;
+      const bodyLang = document.body.getAttribute('lang');
+      if (bodyLang) {
+        lang = bodyLang;
+      }
+    }
+
+    utterance.lang = lang;
+    utterance.text = text;
+
+    if (!isReading) {
+      isReading = true;
+      readButton.textContent = `${stopText} (${lang})`;
+      readButton.setAttribute('title', stopTextTitle);
+      speechSynthesis.speak(utterance);
+    } else {
+      isReading = false;
+      readButton.textContent = readText;
+      readButton.setAttribute('title', readTextTitle);
+      speechSynthesis.cancel();
+    }
+
+    utterance.addEventListener('end', () => {
+      isReading = false;
+      readButton.textContent = readText;
+      readButton.setAttribute('title', readTextTitle);
+    });
+  });  
+    
+    fontButtonContainer.appendChild(readButton);
+    
+  // Botón para que la barra esté siempre visible
+    const floatingButton = document.createElement('button');
+    floatingButton.classList.add('font-button');
+    floatingButton.textContent = floatingFloat;
+    floatingButton.setAttribute('title', floatingFloatTitle);
+    floatingButton.addEventListener('click', () => {
+    if (floatingButton.textContent === floatingFix) {
+      fontButtonContainer.style.position = 'static';
+      floatingButton.textContent = floatingFloat;
+      floatingButton.setAttribute('title', floatingFloatTitle);
+      localStorage.setItem('floatState', 'static');
+    } else {
+      fontButtonContainer.style.position = 'fixed';
+      floatingButton.textContent = floatingFix;
+      floatingButton.setAttribute('title', floatingFixTitle);
+      localStorage.setItem('floatState', 'fixed');
+    }
+  });
+
+    
+
+    let floatState = localStorage.getItem('floatState');
+    if (!floatState) {
+      floatState = 'static';
+      floatingButton.textContent = floatingFix;
+      floatingButton.setAttribute('title', floatingFixTitle);
+    }
+    if (floatState === 'fixed') {
+      fontButtonContainer.style.position = 'fixed';
+      floatingButton.textContent = floatingFix;
+      floatingButton.setAttribute('title', floatingFixTitle);
+    } else {
+      fontButtonContainer.style.position = 'static';
+      floatingButton.textContent = floatingFloat;
+      floatingButton.setAttribute('title', floatingFloatTitle);
+    }
+    
+    localStorage.setItem('floatState', floatState);
+    
+  fontButtonContainer.appendChild(floatingButton);
+
+
+    const infoLink = document.createElement('a');
+    infoLink.textContent = infoText;
+    infoLink.href = infoTextLink;
+    infoLink.target = '_blank';
+    infoLink.style.marginLeft = '8px';
+    infoLink.style.fontSize = '12px';
+    fontButtonContainer.appendChild(infoLink);
+
+    
+    infoLink.classList.add('z-index');
+
+    document.body.insertBefore(fontButtonContainer, document.body.firstChild);
+   
+  });
+  
+  
+
+</script>
+</head>
+<body class="exe-web-site" id="exe-node-20"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UT 4. LA NORMATIVA SOBRE PREVENCIÓN DE RIESGOS LABORALES</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT 4. La normativa sobre prevención de riesgos laborales</a></li>
+   <li><a href="1_antecedentes_histricos_de_la_prevencin_de_riesgos_laborales.html" class="no-ch">1. Antecedentes históricos de la prevención de riesgos laborales</a></li>
+   <li><a href="2_la_regulacin_de_la_prevencin_de_riesgos_laborales.html" class="no-ch">2. La regulación de la prevención de riesgos laborales</a></li>
+   <li class="current-page-parent"><a href="3_la_normativa_internacional.html" class="current-page-parent daddy">3. La normativa internacional</a>
+   <ul>
+      <li><a href="31_declaraciones_institucionales_de_la_onu.html" class="no-ch">3.1. Declaraciones institucionales de la ONU</a></li>
+      <li class="current-page-parent"><a href="32_la_oit.html" class="current-page-parent daddy">3.2. La OIT</a>
+      <ul>
+         <li><a href="321_miembros_de_la_oit.html" class="no-ch">3.2.1. Miembros de la OIT</a></li>
+         <li id="active"><a href="322_estructura_de_la_oit.html" class="active no-ch">3.2.2. Estructura de la OIT</a></li>
+         <li><a href="323_accin_de_la_oit.html" class="no-ch">3.2.3. Acción de la OIT</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_la_normativa_europea.html" class="daddy">4. La normativa europea</a>
+   <ul class="other-section">
+      <li><a href="41_la_unin_europea.html" class="no-ch">4.1. La Unión Europea</a></li>
+      <li><a href="42_los_rganos_comunitarios.html" class="no-ch">4.2. Los órganos comunitarios</a></li>
+      <li><a href="43_normas_comunitarias.html" class="no-ch">4.3. Normas comunitarias</a></li>
+      <li><a href="44_normativa_comunitaria_sobre_prevencin_de_riesgos_laborales.html" class="no-ch">4.4. Normativa comunitaria sobre prevención de riesgos laborales</a></li>
+      <li><a href="45_la_agencia_europea_sobre_seguridad_y_salud_en_el_trabajo.html" class="no-ch">4.5. La agencia europea sobre seguridad y salud en el trabajo</a></li>
+   </ul>
+   </li>
+   <li><a href="5_la_normativa_espaola_sobre_prevencin_de_riesgos_laborales.html" class="daddy">5. La normativa española sobre prevención de riesgos laborales</a>
+   <ul class="other-section">
+      <li><a href="51_antecedentes_histricos_y_legislativos.html" class="no-ch">5.1. Antecedentes históricos y legislativos</a></li>
+      <li><a href="52_la_ley_3195_de_prevencin_de_riesgos_laborales.html" class="daddy">5.2. La ley 31/95 de prevención de riesgos laborales</a>
+      <ul class="other-section">
+         <li><a href="521_objeto_de_la_lprl.html" class="no-ch">5.2.1. Objeto de la LPRL</a></li>
+         <li><a href="522_estructura_de_la_lprl.html" class="no-ch">5.2.2. Estructura de la LPRL</a></li>
+         <li><a href="523_mbito_de_aplicacin_de_la_lprl.html" class="no-ch">5.2.3. Ámbito de aplicación de la LPRL</a></li>
+         <li><a href="524_definiciones_y_conceptos.html" class="no-ch">5.2.4. Definiciones y conceptos</a></li>
+      </ul>
+      </li>
+      <li><a href="53_reglamentos_de_desarrollo_de_la_lprl.html" class="no-ch">5.3. Reglamentos de desarrollo de la LPRL</a></li>
+      <li><a href="54_los_convenios_colectivos.html" class="no-ch">5.4. Los convenios colectivos</a></li>
+   </ul>
+   </li>
+   <li><a href="6_otras_normas_de_carcter_preventivo.html" class="no-ch">6. Otras normas de carácter preventivo</a></li>
+   <li><a href="anexo_i_directivas_especficas_que_desarrollan_la_directiva_89391cee.html" class="no-ch">Anexo I. Directivas específicas que desarrollan la Directiva 89/391/CEE</a></li>
+   <li><a href="anexo_ii_reglamentos_de_desarrollo_de_la_ley_de_prevencin_de_riesgos_laborales_y_reglamentos_anexos.html" class="no-ch">Anexo II. Reglamentos de desarrollo de la Ley de Prevención de Riesgos Laborales y reglamentos anexos</a></li>
+   <li><a href="_ficha_tcnica_y_descarga_.html" class="no-ch">- Ficha técnica y descarga -</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="321_miembros_de_la_oit.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323_accin_de_la_oit.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.2.2. Estructura de la OIT</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id12">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle"> </h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta12_124_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Su estructura es <strong>tripartita</strong> y en ella participan gobiernos, empresarios y trabajadores:</p>
+<figure class="exe-figure exe-media position-center license-CC-BY-NC-SA" style="width: 595px;"><iframe width="595" height="485" style="border: 1px solid #CCC; border-width: 1px; margin-bottom: 5px; max-width: 100%;" src="//www.slideshare.net/slideshow/embed_code/key/8AFL36WyuxPuhD" allowfullscreen="allowfullscreen"></iframe>
+<figcaption class="figcaption"><a href="https://es.slideshare.net/franksbur?utm_campaign=profiletracking&amp;utm_medium=sssite&amp;utm_source=ssslideview" target="_blank" class="author" rel="noopener">Abogado litigante</a>. <a href="https://es.slideshare.net/franksbur/estructura-oit" target="_blank" class="title" rel="noopener"><em>Estructura de la OIT</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/licenses/?lang=es" rel="license nofollow noopener" target="_blank" title="Creative Commons BY-NC-SA">CC BY-NC-SA</a><span class="sep">)</span></span></figcaption>
+</figure></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id13">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">La Conferencia Internacional del Trabajo</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta13_125_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Los Estados Miembros de la OIT participan en la reunión anual de la <strong>Conferencia Internacional</strong>, que se celebra <strong>anualmente</strong> en Ginebra, Suiza (sede de la OIT) en el mes de junio. Cada Estado Miembro está representado por<strong> dos delegados del gobierno</strong>, <strong>un delegado de los empleadores</strong> y <strong>un delegado de los trabajadores</strong>. Los delegados están acompañados de consejeros técnicos. En general, el Ministro de Trabajo, u otro ministro encargado de las cuestiones laborales, encabeza la delegación de cada país, hace uso de la palabra y presenta las opiniones de su gobierno.</p>
+<p style="text-align: justify;">Los delegados de los empleadores y de los trabajadores pueden opinar y votar de acuerdo con las instrucciones recibidas de sus organizaciones.<strong> En ocasiones, su voto difiere e incluso puede oponerse al de los representantes de sus gobiernos</strong>.</p>
+<figure class="exe-figure exe-image position-center license-CC0" style="width: 499px;"><img src="52951700532_df0e3916d9_k.jpg" alt="" width="499" height="333" hspace="auto" style="display: block; margin-left: auto; margin-right: auto;" />
+<figcaption class="figcaption"><a href="https://www.ilo.org/global/lang--es/index.htm" target="_blank" class="author" rel="noopener">OIT</a>. <a href="https://live.ilo.org/es/eventos/111a-conferencia-internacional-del-trabajo-2023-06" target="_blank" class="title" rel="noopener"><em>111ª Conferencia internacional del trabajo</em></a> <span class="license"><span class="sep">(</span><a href="http://creativecommons.org/publicdomain/zero/1.0/deed.es" rel="license nofollow noopener" target="_blank" title="Creative Commons (CC0)">CC0</a><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;">La Conferencia tiene una función muy importante. <strong>Establece y adopta el texto de las normas internacionales del trabajo, principalmente convenios y recomendaciones</strong>. Sirve de foro en donde se debaten cuestiones sociales y laborales de importancia para todo el mundo. La Conferencia aprueba también el presupuesto de la Organización y elige al Consejo de Administración de la OIT</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id15">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">El Consejo de Administración</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta15_127_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">El <strong>Consejo de Administración</strong> es el órgano ejecutivo de la OIT y se reúne<strong> tres veces por año</strong> en Ginebra. Adopta decisiones acerca de la política de la OIT y establece el programa y el presupuesto  que, a continuación, presenta a la Conferencia para su adopción. También elige al Director General de la Oficina Internacional del Trabajo.</p>
+<p style="text-align: justify;">El Consejo está compuesto de 56 miembros titulares (28 Gobiernos, 14 Empleadores y 14 Trabajadores) y de 66 miembros adjuntos (28 Gobiernos, 19 Empleadores y 19 Trabajadores). Diez de los puestos gubernamentales quedan reservados a los Miembros de mayor importancia industrial (Alemania, Brasil, China, Francia, India, Italia, Japón, Federación de Rusia, Reino Unido y Estados Unidos). Los demás miembros gubernamentales son elegidos por la Conferencia cada tres años (las últimas elecciones se celebraron en junio de 2005). Los miembros empleadores y trabajadores son elegidos en su capacidad individual.</p>
+<p style="text-align: justify;">El Consejo cuenta actualmente con las comisiones y los comités siguientes:</p>
+<ul>
+<li style="text-align: justify;">Comité de Libertad Sindical (CFA)</li>
+<li style="text-align: justify;">Comisión de Programa, Presupuesto y Administración (PFA)</li>
+<li style="text-align: justify;">Comisión de Cuestiones Jurídicas y Normas Internacionales del Trabajo (LILS)</li>
+<li style="text-align: justify;">Subcomisión de Empresas Multinacionales (MNE) · Comisión de Empleo y Política Social (ESP)</li>
+<li style="text-align: justify;">Comisión de Reuniones Sectoriales y Técnicas y Cuestiones Afines (STM)</li>
+<li style="text-align: justify;">Comisión de Cooperación Técnica (TC)</li>
+<li style="text-align: justify;">Grupo de Trabajo sobre la Dimensión Social de la Mundialización (WP/SDG)</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id16">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">La Oficina Internacional del Trabajo</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta16_128_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">La <strong>Oficina Internacional del Trabajo</strong> es la secretaría <strong>permanente</strong> de la Organización Internacional del Trabajo y tiene la responsabilidad primordial de las actividades que prepara con la supervisión del Consejo de Administración y la dirección del Director General, elegido por un período renovable de cinco años. La Oficina cuenta con unos 1.900 funcionarios de más de cien nacionalidades en su sede de Ginebra y en cuarenta oficinas repartidas en todo el mundo.</p>
+<p style="text-align: justify;">Además, en virtud del programa de cooperación técnica, unos 600 expertos llevan a cabo misiones en todas las regiones del mundo.</p>
+<p style="text-align: justify;">La Oficina también actúa en calidad de <strong>centro de investigación y documentación</strong>; como casa editora, publica una amplia gama de estudios especializados, informes y periódicos.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper MultichoiceIdevice em_iDevice em_iDevice_question" id="id50">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Pregunta de Elección Múltiple</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section class="question">
+<form name="multi-choice-form-50_86" action="#" onsubmit="return false" class="activity-form">
+<h1 class="js-sr-av">Pregunta</h1>
+<div id="taquestion50_86" class="block question iDevice_content">
+<p><strong>¿Cuántos delegados representan a cada estado en la OIT?</strong></p>
+</div>
+<section class="iDevice_answers">
+<h1 class="js-sr-av">Respuestas</h1>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i50_89" class="sr-av"><a href="#answer-50_89">Opción 1</a></label><input type="radio" name="option50_86" id="i50_89" class="exe-radio-option exe-radio-option-0-4-50_86-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-50_89"><div id="taans50_89" class="block iDevice_content">
+<p>Un delegado del gobierno, un delegado de los empleadores y un delegado de los trabajadores</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i50_92" class="sr-av"><a href="#answer-50_92">Opción 2</a></label><input type="radio" name="option50_86" id="i50_92" class="exe-radio-option exe-radio-option-1-4-50_86-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-50_92"><div id="taans50_92" class="block iDevice_content">
+<p>Dos delegados del gobierno, un delegado de los empleadores y un delegado de los trabajadores</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i50_380" class="sr-av"><a href="#answer-50_380">Opción 3</a></label><input type="radio" name="option50_86" id="i50_380" class="exe-radio-option exe-radio-option-2-4-50_86-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-50_380"><div id="taans50_380" class="block iDevice_content">
+<p>Dos delegados del gobierno y uno de los empleadores y trabajadores</p>
+</div>
+</div>
+</section>
+<section class="iDevice_answer">
+<p class="iDevice_answer-field js-required">
+<label for="i50_383" class="sr-av"><a href="#answer-50_383">Opción 4</a></label><input type="radio" name="option50_86" id="i50_383" class="exe-radio-option exe-radio-option-3-4-50_86-multi"/>
+</p>
+<div class="iDevice_answer-content" id="answer-50_383"><div id="taans50_383" class="block iDevice_content">
+<p>Dos delegados del gobierno, de los empleadores y de los trabajadores.</p>
+</div>
+</div>
+</section>
+</section>
+<section class="iDevice_feedbacks js-feedback">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<section id="sa0b50_86" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa1b50_86" class="feedback js-hidden">
+<p>Opción correcta</p>
+</section>
+<section id="sa2b50_86" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+<section id="sa3b50_86" class="feedback js-hidden">
+<p>Incorrecto</p>
+</section>
+</section>
+</form>
+<section class="iDevice_solution feedback js-hidden">
+<h1>Solución</h1>
+<ol>
+<li><a href="#answer-50_89">Incorrecto</a><span> (<a href="#sa0b50_86">Retroalimentación</a>)</span></li>
+<li><a href="#answer-50_92">Opción correcta</a><span> (<a href="#sa1b50_86">Retroalimentación</a>)</span></li>
+<li><a href="#answer-50_380">Incorrecto</a><span> (<a href="#sa2b50_86">Retroalimentación</a>)</span></li>
+<li><a href="#answer-50_383">Incorrecto</a><span> (<a href="#sa3b50_86">Retroalimentación</a>)</span></li>
+</ol>
+</section>
+</section>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper RelacionaIdevice em_iDevice em_iDevice_interactive" id="id60">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_interactive.png)"><h1 class="iDeviceTitle">Actividad interactiva</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta60_128_2" class="block iDevice_content">
+<div class="relaciona-IDevice"><div class="relaciona-instructions gameQP-instructions"><p>Relaciona cada tarjeta con su pareja.</p></div><div class="relaciona-DataGame js-hidden">{"typeGame":"Relaciona","author":"Elaboración propia","randomCards":true,"instructions":"<p>Relaciona cada tarjeta con su pareja.</p>","showMinimize":true,"itinerary":{"showClue":false,"clueGame":"","percentageClue":40,"showCodeAccess":false,"codeAccess":"","messageCodeAccess":""},"cardsGame":[{"url":"","x":0,"y":0,"author":"","alt":"","audio":"","color":"#000000","backcolor":"#ffffff","eText":"La%20Conferencia%20Internacional%20del%20Trabajo","urlBk":"","xBk":0,"yBk":0,"authorBk":"","altBk":"","audioBk":"","colorBk":"#000000","backcolorBk":"#ffffff","eTextBk":"Aprueba%20los%20convenios%20y%20recomendaciones"},{"url":"","x":0,"y":0,"author":"","alt":"","audio":"","color":"#000000","backcolor":"#ffffff","eText":"El%20Consejo%20de%20Administraci%C3%B3n","urlBk":"","xBk":0,"yBk":0,"authorBk":"","altBk":"","audioBk":"","colorBk":"#000000","backcolorBk":"#ffffff","eTextBk":"Adopta%20decisiones%20acerca%20de%20la%20pol%C3%ADtica%20de%20la%20OIT%20y%20establece%20el%20programa%20y%20el%20presupuesto%20de%20la%20organizaci%C3%B3n"},{"url":"","x":0,"y":0,"author":"","alt":"","audio":"","color":"#000000","backcolor":"#ffffff","eText":"La%20Oficina%20Internacional%20del%20Trabajo","urlBk":"","xBk":0,"yBk":0,"authorBk":"","altBk":"","audioBk":"","colorBk":"#000000","backcolorBk":"#ffffff","eTextBk":"Es%20la%20secretar%C3%ADa%20permanente%20de%20la%20OIT%20y%20act%C3%BAa%20en%20calidad%20de%20centro%20de%20investigaci%C3%B3n%20y%20documentaci%C3%B3n."}],"isScorm":0,"textButtonScorm":"Guardar la puntuación","repeatActivity":false,"textAfter":"","version":1.3,"percentajeCards":100,"type":2,"showSolution":true,"timeShowSolution":3,"time":1,"evaluation":false,"evaluationID":"","id":"2024323145741-60","msgs":{"msgSubmit":"Enviar","msgClue":"¡Genial! La pista es:","msgCodeAccess":"Código de acceso","msgPlayStart":"Pulse aquí para jugar","msgScore":"Puntuación","msgErrors":"Errores","msgHits":"Aciertos","msgMinimize":"Minimizar","msgMaximize":"Maximizar","msgFullScreen":"Pantalla Completa","msgExitFullScreen":"Salir del modo pantalla completa","msgNoImage":"Pregunta sin imágenes","msgEndGameScore":"Antes de guardar la puntuación comience la partida.","msgScoreScorm":"La puntuación no se puede guardar porque esta página no forma parte  de un paquete SCORM.","msgOnlySaveScore":"¡Sólo puede guardar la puntuación una vez!","msgOnlySave":"Sólo puede guardar una vez","msgInformation":"Información","msgYouScore":"Su puntuación","msgAuthor":"Autoría","msgOnlySaveAuto":"Su puntuación se guardará después de cada pregunta. Sólo puede jugar una vez.","msgSaveAuto":"Su puntuación se guardará automáticamente después de cada pregunta.","msgSeveralScore":"Puede guardar la puntuación tantas veces como quiera","msgYouLastScore":"La última puntuación guardada es","msgActityComply":"Ya ha realizado esta actividad.","msgPlaySeveralTimes":"Puede realizar esta actividad cuantas veces quiera","msgClose":"Cerrar","msgAudio":"Audio","msgNumQuestions":"Número de tarjetas","msgTryAgain":"Necesita al menos un %s% de respuestas correctas para conseguir la información. Vuelva a intentarlo.","msgEndGameM":"Has completado el juego. Tu puntuación es %s.","msgUncompletedActivity":"Actividad no completada","msgSuccessfulActivity":"Actividad superada. Puntuación: %s","msgUnsuccessfulActivity":"Actividad no superada. Puntuación: %s","msgTypeGame":"Relaciona","msgCheck":"Comprobar","msgRestart":"Reiniciar"}}</div><div class="relaciona-bns js-hidden">Su navegador no es compatible con esta herramienta.</div></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="321_miembros_de_la_oit.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323_accin_de_la_oit.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_cedec_js.js"></script></body></html>

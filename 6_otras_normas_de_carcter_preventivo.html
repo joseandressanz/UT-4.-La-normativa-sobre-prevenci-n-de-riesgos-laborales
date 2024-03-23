@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6. Otras normas de carácter preventivo | UT 4. LA NORMATIVA SOBRE PREVENCIÓN DE RIESGOS LABORALES </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="José Andrés Sanz Ruiz" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.9 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"  type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"  type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"  type="text/css">
+
+
+<style>
+  
+  .z-index {
+    z-index: 999;
+  }
+
+  .select-container {
+    display: inline-block;
+    position: relative;
+    z-index: 999;
+  }
+
+  .font-button {
+    padding: 8px 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 8px;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    z-index: 999;
+  }
+
+  .fontButtonContainer {
+     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* establece el wrap para que los botones se distribuyan en varias líneas */
+    gap: 5px; /* ajusta el espacio entre los botones */
+    position: static; /* fija la barra de botones en la página: static para que aparezca en la parte superior, fixed para que quede flotando */
+    top: 40px; /* fija la barra de botones en la parte superior de la página */
+    left: 0; /* fija la barra de botones en el margen izquierdo */
+    right: 0; /* fija la barra de botones en el margen derecho */
+    margin: auto; /* centra la barra de botones horizontalmente */
+  }
+    
+  /* Estilo para el desplegable */
+  select {
+    padding: 8px 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 6px;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+  }
+  
+  select option {
+  text-align: left;
+  }
+  
+</style>
+
+<script>
+
+// BatexeGo v3 Juan José de Haro 
+
+// Define los textos que se ven en pantalla. Reemplazar el texto entre comillas
+
+  // Textos del menú desplegable
+    const defaultText = 'Parámetros por defecto:'; //Descripción de la opción por defecto
+    const standardText = 'Fuente estándar'; // Fuente original del documento
+    
+    const dyslexicDesc = 'Dislexia:'; // Descripción de la opción OpenDyslexic  
+    const dyslexicText = 'OpenDyslexic'; 
+    
+    const hyperlegibleDesc = 'Deficiencias visuales:'; // Descripción de la opción Atkinson Hyperlegible
+    const hyperlegibleText = 'Atkinson Hyperlegible'; 
+    
+    const highLegibilityDesc = 'Alta legibilidad:'; // Descripción de las opciones de alta legibilidad
+    const opensansText = 'OpenSans'; 
+    const robotoText = 'Roboto'; 
+    const latoText = 'Lato'; 
+    const montserratText = 'Montserrat'; 
+
+  // Botones aumentar y disminuir fuente
+    const increaseFontText = 'A+'; // Botón para incrementar la fuente
+    const increaseFontTitle = 'Incrementa la fuente'; // Texto emergente al pasar el ratón
+    
+    const decreaseFontText = 'A-'; // Botón para reducir la fuente
+    const decreaseFontTitle = 'Reduce la fuente'; // Texto emergente al pasar el ratón
+
+  // Botón para traducir
+    const translateText = '🌐'; // Texto para el botón de traducción de Google
+    const translateTitle = 'Traduce la página'; // Texto emergente al pasar el ratón
+
+  // Botón para leer / detener la lectura en voz alta
+    let readText = 'Leer'; // Botón para leer en voz alta el contenido de la página
+    const readTextTitle ='Lee en voz alta la selección o la página entera'; // Texto emergente al pasar el ratón
+    
+    const stopText = 'Detener'; // Texto del botón para detener la lectura
+    const stopTextTitle = 'Detiene la lectura'; // Texto emergente al pasar el ratón
+  
+  // Botones para que los botones estén siempre visibles
+    let floatingFix = 'Fijar'; // Texto del botón flotante cuando está sobre el texto
+    let floatingFixTitle = 'Fija la barra de botones en la parte superior'; // Texto emergente al pasar el ratón
+    
+    let floatingFloat = 'Flotar'; //Texto del botón flotante cuando está fijo en la parte superior
+    let floatingFloatTitle = 'La barra permanecerá siempre visible';
+  
+  
+  // Enlace +Info
+    const infoText = '+Info'; // Texto del enlace +Info
+    const infoTextLink = 'https://batexego.bilateria.org'; // Destino del enlace de +Info
+
+// Fin 
+  
+
+  readText = `${readText} (${document.documentElement.lang})`; //Se añade el idioma al botón Leer
+  
+
+  let originalFont;
+  let currentFontSize;
+  let originalFontSize;
+  let isReading = false;
+  let utterance = new SpeechSynthesisUtterance();
+  let googleTranslateWidgetVisible = localStorage.getItem('googleTranslateWidgetVisible');
+
+  function setFont(font) {
+  document.body.style.fontFamily = font;
+  localStorage.setItem('font', font);
+  }
+
+  function setFontSize(size) {
+  currentFontSize = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+  currentFontSize += size;
+  document.body.style.fontSize = currentFontSize + 'px';
+  localStorage.setItem('fontSize', currentFontSize + 'px');
+  }
+  
+  
+
+function toggleGoogleTranslateWidget() {
+  if (!googleTranslateWidgetVisible) {
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.id = 'google-translate-script';
+    document.head.appendChild(script);
+    
+    const googleTranslateElement = document.createElement('div');
+    googleTranslateElement.id = 'google_translate_element';
+    googleTranslateElement.style.position = 'fixed';
+    googleTranslateElement.style.top = '0';
+    googleTranslateElement.style.right = '0';
+    googleTranslateElement.style.zIndex = '1000';
+    document.body.appendChild(googleTranslateElement);
+
+    window.googleTranslateElementInit = function() {
+      new google.translate.TranslateElement({pageLanguage: 'auto', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
+    };
+
+    googleTranslateWidgetVisible = true;
+    
+  } else {
+    const script = document.getElementById('google-translate-script');
+    script.remove();
+    
+    const googleTranslateElement = document.getElementById('google_translate_element');
+    googleTranslateElement.remove();
+
+    googleTranslateWidgetVisible = false;
+  }
+  localStorage.setItem('googleTranslateWidgetVisible',googleTranslateWidgetVisible);
+}
+
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    googleTranslateWidgetVisible = JSON.parse(localStorage.getItem('googleTranslateWidgetVisible'));
+  if(googleTranslateWidgetVisible) {
+    googleTranslateWidgetVisible = false;
+    toggleGoogleTranslateWidget();
+  }
+
+    
+  
+    originalFont = window.getComputedStyle(document.body).getPropertyValue('font-family');
+    localStorage.setItem('originalFont', originalFont);
+    let font = localStorage.getItem('font');
+    if (!font) {
+    font = originalFont;
+    }
+    document.body.style.fontFamily = font;
+
+    let fontSize = localStorage.getItem('fontSize');
+    originalFontSize = window.getComputedStyle(document.body).getPropertyValue('font-size');
+    localStorage.setItem('originalFontSize', originalFontSize);
+    if (!fontSize) {
+    fontSize = originalFontSize
+    localStorage.setItem('fontSize', fontSize);
+    }
+    document.body.style.fontSize = fontSize;
+
+    const fontButtonContainer = document.createElement('div');
+    fontButtonContainer.classList.add('fontButtonContainer'); 
+    
+    const selectContainer = document.createElement('div');
+    selectContainer.classList.add('select-container');
+    const select = document.createElement('select');
+    select.classList.add('z-index');
+    const standardOption = document.createElement('option');
+    standardOption.value = 'standard';
+    standardOption.text = standardText;
+
+    const defaultFontOptGroup = document.createElement('optgroup');
+    defaultFontOptGroup.label = defaultText;
+    defaultFontOptGroup.appendChild(standardOption);
+
+    select.appendChild(defaultFontOptGroup);
+
+
+    const dyslexicOption = document.createElement('option');
+    dyslexicOption.value = 'dyslexic';
+    dyslexicOption.text = dyslexicText;
+    select.add(dyslexicOption);
+
+    const dyslexicOptGroup = document.createElement('optgroup');
+    dyslexicOptGroup.label = dyslexicDesc;
+    dyslexicOptGroup.appendChild(dyslexicOption);
+    select.appendChild(dyslexicOptGroup);
+
+    const hyperlegibleOption = document.createElement('option');
+    hyperlegibleOption.value = 'hyperlegible';
+    hyperlegibleOption.text = hyperlegibleText;
+    select.add(hyperlegibleOption);
+
+    const hyperlegibleOptGroup = document.createElement('optgroup');
+    hyperlegibleOptGroup.label = hyperlegibleDesc;
+    hyperlegibleOptGroup.appendChild(hyperlegibleOption);
+    select.appendChild(hyperlegibleOptGroup);
+
+    const opensansOption = document.createElement('option');
+    opensansOption.value = 'Open Sans';
+    opensansOption.text = opensansText;
+    select.add(opensansOption);
+
+    const robotoOption = document.createElement('option');
+    robotoOption.value = 'Roboto';
+    robotoOption.text = robotoText;
+    select.add(robotoOption);
+
+    const latoOption = document.createElement('option');
+    latoOption.value = 'Lato';
+    latoOption.text = latoText;
+    select.add(latoOption);
+
+    const montserratOption = document.createElement('option');
+    montserratOption.value = 'Montserrat';
+    montserratOption.text = montserratText;
+    select.add(montserratOption);  
+    
+
+    const highLegibilityOptGroup = document.createElement('optgroup');
+    highLegibilityOptGroup.label = highLegibilityDesc;
+    highLegibilityOptGroup.appendChild(latoOption);
+    highLegibilityOptGroup.appendChild(montserratOption);
+    highLegibilityOptGroup.appendChild(opensansOption);
+    highLegibilityOptGroup.appendChild(robotoOption);
+    
+    
+    
+    select.appendChild(highLegibilityOptGroup);
+
+    // Seleccionar la opción correspondiente al cargar la página
+    if (font === originalFont) { // Nueva condición
+    select.selectedIndex = 0; // Nueva línea
+    } else if (font === 'OpenDyslexic') {
+    select.selectedIndex = 1;
+    } else if (font === 'Atkinson Hyperlegible') {
+    select.selectedIndex = 2;
+    } else if (font === 'Roboto') {
+    select.selectedIndex = 6;
+    } else if (font === 'Lato') {
+    select.selectedIndex = 3;
+    } else if (font === 'Open Sans') {
+    select.selectedIndex = 5;
+    } else if (font === 'Montserrat') {
+    select.selectedIndex = 4;
+    }
+
+    select.addEventListener('change', () => {
+    const font = select.value;
+    if (font === 'standard') {
+    setFont(originalFont);
+    fontSize = originalFontSize;
+    localStorage.setItem('fontSize', fontSize);
+    document.body.style.fontSize = localStorage.getItem('originalFontSize');
+    } else if (font === 'dyslexic') {
+    setFont('OpenDyslexic');
+    } else if (font === 'hyperlegible') {
+    setFont('Atkinson Hyperlegible');
+    } else if (font === 'Open Sans') {
+    setFont('Open Sans');
+    } else if (font === 'Roboto') {
+    setFont('Roboto');
+    } else if (font === 'Lato') {
+    setFont('Lato');
+    }  else if (font === 'Montserrat') {
+    setFont('Montserrat');
+    }
+    });
+
+    selectContainer.appendChild(select);
+    fontButtonContainer.appendChild(selectContainer);
+    
+
+    const increaseFontButton = document.createElement('button');
+    increaseFontButton.classList.add('font-button');
+    increaseFontButton.textContent = increaseFontText;
+    increaseFontButton.setAttribute('title', increaseFontTitle);
+    increaseFontButton.addEventListener('click', () => setFontSize(1));
+    fontButtonContainer.appendChild(increaseFontButton);
+
+    const decreaseFontButton = document.createElement('button');
+    decreaseFontButton.classList.add('font-button');
+    decreaseFontButton.textContent = decreaseFontText;
+    decreaseFontButton.setAttribute('title', decreaseFontTitle);
+    decreaseFontButton.addEventListener('click', () => setFontSize(-1));
+    fontButtonContainer.appendChild(decreaseFontButton);
+    
+    const translateButton = document.createElement('button');
+    translateButton.classList.add('font-button');
+    translateButton.textContent = translateText;
+    translateButton.setAttribute('title', translateTitle);
+    translateButton.addEventListener('click', toggleGoogleTranslateWidget);
+    fontButtonContainer.appendChild(translateButton);
+
+  // Botón para leer en voz alta
+    const readButton = document.createElement('button');
+    readButton.classList.add('font-button');
+    readButton.textContent = readText;
+    readButton.setAttribute('title', readTextTitle);
+    
+    readButton.addEventListener('click', () => {
+    let selectedText = window.getSelection().toString();
+    let text = '';
+    let lang = document.documentElement.lang;
+    if (selectedText !== '') {
+      text = selectedText;
+      let selectedNode = window.getSelection().anchorNode;
+      while (selectedNode && selectedNode.nodeType !== Node.ELEMENT_NODE) {
+        selectedNode = selectedNode.parentNode;
+      }
+      if (selectedNode) {
+        const selectedLang = selectedNode.getAttribute('lang');
+        if (selectedLang) {
+          lang = selectedLang;
+        }
+      }
+    } else {
+      text = document.body.innerText;
+      const bodyLang = document.body.getAttribute('lang');
+      if (bodyLang) {
+        lang = bodyLang;
+      }
+    }
+
+    utterance.lang = lang;
+    utterance.text = text;
+
+    if (!isReading) {
+      isReading = true;
+      readButton.textContent = `${stopText} (${lang})`;
+      readButton.setAttribute('title', stopTextTitle);
+      speechSynthesis.speak(utterance);
+    } else {
+      isReading = false;
+      readButton.textContent = readText;
+      readButton.setAttribute('title', readTextTitle);
+      speechSynthesis.cancel();
+    }
+
+    utterance.addEventListener('end', () => {
+      isReading = false;
+      readButton.textContent = readText;
+      readButton.setAttribute('title', readTextTitle);
+    });
+  });  
+    
+    fontButtonContainer.appendChild(readButton);
+    
+  // Botón para que la barra esté siempre visible
+    const floatingButton = document.createElement('button');
+    floatingButton.classList.add('font-button');
+    floatingButton.textContent = floatingFloat;
+    floatingButton.setAttribute('title', floatingFloatTitle);
+    floatingButton.addEventListener('click', () => {
+    if (floatingButton.textContent === floatingFix) {
+      fontButtonContainer.style.position = 'static';
+      floatingButton.textContent = floatingFloat;
+      floatingButton.setAttribute('title', floatingFloatTitle);
+      localStorage.setItem('floatState', 'static');
+    } else {
+      fontButtonContainer.style.position = 'fixed';
+      floatingButton.textContent = floatingFix;
+      floatingButton.setAttribute('title', floatingFixTitle);
+      localStorage.setItem('floatState', 'fixed');
+    }
+  });
+
+    
+
+    let floatState = localStorage.getItem('floatState');
+    if (!floatState) {
+      floatState = 'static';
+      floatingButton.textContent = floatingFix;
+      floatingButton.setAttribute('title', floatingFixTitle);
+    }
+    if (floatState === 'fixed') {
+      fontButtonContainer.style.position = 'fixed';
+      floatingButton.textContent = floatingFix;
+      floatingButton.setAttribute('title', floatingFixTitle);
+    } else {
+      fontButtonContainer.style.position = 'static';
+      floatingButton.textContent = floatingFloat;
+      floatingButton.setAttribute('title', floatingFloatTitle);
+    }
+    
+    localStorage.setItem('floatState', floatState);
+    
+  fontButtonContainer.appendChild(floatingButton);
+
+
+    const infoLink = document.createElement('a');
+    infoLink.textContent = infoText;
+    infoLink.href = infoTextLink;
+    infoLink.target = '_blank';
+    infoLink.style.marginLeft = '8px';
+    infoLink.style.fontSize = '12px';
+    fontButtonContainer.appendChild(infoLink);
+
+    
+    infoLink.classList.add('z-index');
+
+    document.body.insertBefore(fontButtonContainer, document.body.firstChild);
+   
+  });
+  
+  
+
+</script>
+</head>
+<body class="exe-web-site" id="exe-node-24"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UT 4. LA NORMATIVA SOBRE PREVENCIÓN DE RIESGOS LABORALES</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UT 4. La normativa sobre prevención de riesgos laborales</a></li>
+   <li><a href="1_antecedentes_histricos_de_la_prevencin_de_riesgos_laborales.html" class="no-ch">1. Antecedentes históricos de la prevención de riesgos laborales</a></li>
+   <li><a href="2_la_regulacin_de_la_prevencin_de_riesgos_laborales.html" class="no-ch">2. La regulación de la prevención de riesgos laborales</a></li>
+   <li><a href="3_la_normativa_internacional.html" class="daddy">3. La normativa internacional</a>
+   <ul class="other-section">
+      <li><a href="31_declaraciones_institucionales_de_la_onu.html" class="no-ch">3.1. Declaraciones institucionales de la ONU</a></li>
+      <li><a href="32_la_oit.html" class="daddy">3.2. La OIT</a>
+      <ul class="other-section">
+         <li><a href="321_miembros_de_la_oit.html" class="no-ch">3.2.1. Miembros de la OIT</a></li>
+         <li><a href="322_estructura_de_la_oit.html" class="no-ch">3.2.2. Estructura de la OIT</a></li>
+         <li><a href="323_accin_de_la_oit.html" class="no-ch">3.2.3. Acción de la OIT</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="4_la_normativa_europea.html" class="daddy">4. La normativa europea</a>
+   <ul class="other-section">
+      <li><a href="41_la_unin_europea.html" class="no-ch">4.1. La Unión Europea</a></li>
+      <li><a href="42_los_rganos_comunitarios.html" class="no-ch">4.2. Los órganos comunitarios</a></li>
+      <li><a href="43_normas_comunitarias.html" class="no-ch">4.3. Normas comunitarias</a></li>
+      <li><a href="44_normativa_comunitaria_sobre_prevencin_de_riesgos_laborales.html" class="no-ch">4.4. Normativa comunitaria sobre prevención de riesgos laborales</a></li>
+      <li><a href="45_la_agencia_europea_sobre_seguridad_y_salud_en_el_trabajo.html" class="no-ch">4.5. La agencia europea sobre seguridad y salud en el trabajo</a></li>
+   </ul>
+   </li>
+   <li><a href="5_la_normativa_espaola_sobre_prevencin_de_riesgos_laborales.html" class="daddy">5. La normativa española sobre prevención de riesgos laborales</a>
+   <ul class="other-section">
+      <li><a href="51_antecedentes_histricos_y_legislativos.html" class="no-ch">5.1. Antecedentes históricos y legislativos</a></li>
+      <li><a href="52_la_ley_3195_de_prevencin_de_riesgos_laborales.html" class="daddy">5.2. La ley 31/95 de prevención de riesgos laborales</a>
+      <ul class="other-section">
+         <li><a href="521_objeto_de_la_lprl.html" class="no-ch">5.2.1. Objeto de la LPRL</a></li>
+         <li><a href="522_estructura_de_la_lprl.html" class="no-ch">5.2.2. Estructura de la LPRL</a></li>
+         <li><a href="523_mbito_de_aplicacin_de_la_lprl.html" class="no-ch">5.2.3. Ámbito de aplicación de la LPRL</a></li>
+         <li><a href="524_definiciones_y_conceptos.html" class="no-ch">5.2.4. Definiciones y conceptos</a></li>
+      </ul>
+      </li>
+      <li><a href="53_reglamentos_de_desarrollo_de_la_lprl.html" class="no-ch">5.3. Reglamentos de desarrollo de la LPRL</a></li>
+      <li><a href="54_los_convenios_colectivos.html" class="no-ch">5.4. Los convenios colectivos</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="6_otras_normas_de_carcter_preventivo.html" class="active no-ch">6. Otras normas de carácter preventivo</a></li>
+   <li><a href="anexo_i_directivas_especficas_que_desarrollan_la_directiva_89391cee.html" class="no-ch">Anexo I. Directivas específicas que desarrollan la Directiva 89/391/CEE</a></li>
+   <li><a href="anexo_ii_reglamentos_de_desarrollo_de_la_ley_de_prevencin_de_riesgos_laborales_y_reglamentos_anexos.html" class="no-ch">Anexo II. Reglamentos de desarrollo de la Ley de Prevención de Riesgos Laborales y reglamentos anexos</a></li>
+   <li><a href="_ficha_tcnica_y_descarga_.html" class="no-ch">- Ficha técnica y descarga -</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="54_los_convenios_colectivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="anexo_i_directivas_especficas_que_desarrollan_la_directiva_89391cee.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6. Otras normas de carácter preventivo</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id47">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Notas Técnicas de Prevención (NTP)</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta47_128_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Las <strong>Notas Técnicas de Prevención</strong> son documentos breves publicados por el <strong>Instituto Nacional de Seguridad y Salud en el Trabajo</strong> (INSST). La elaboración de las NTP se inició en 1982 y <span>tratan un tema preventivo concreto con una orientación, eminentemente, práctica. Van destinadas a los prevencionistas cuya función es resolver los problemas preventivos en el día a día de la empresa. En la colección se tratan todas las áreas preventivas: seguridad, higiene, medicina, gestión de la prevención, psicología, formación, etc.</span></p>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 400px;"><img src="imageedit_74_9824703216.png" alt="" width="400" height="240" />
+<figcaption class="figcaption"><a href="https://www.insst.es/" target="_blank" class="author" rel="noopener">INSST</a>. <a href="https://www.insst.es/ntp-notas-tecnicas-de-prevencion" target="_blank" class="title" rel="noopener"><em>Notas técnicas de prevención</em></a> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;"><span>Éstos documentos <strong>no son vinculantes, ni de obligado cumplimiento</strong>. La empresa está obligada a cumplir con las disposiciones normativas que le sean aplicables en cada momento, sean estatales, autonómicas o provenientes de la administración local. La <a href="https://www.insst.es/ntp-notas-tecnicas-de-prevencion">colección de NTP</a> pretende ayudar al cumplimiento de tales obligaciones, facilitando la aplicación técnica de las exigencias legales.</span></p>
+<table border="1" style="width: 64.6392%; height: 26px;" class="exe-table">
+<tbody>
+<tr style="height: 26px;">
+<td style="width: 100%; background-color: #bfe3e0; text-align: center; height: 26px;"><span style="font-weight: 400;"><a href="https://www.insst.es/ntp-notas-tecnicas-de-prevencion">Buscador de Notas Técnicas de Prevención del INSST</a></span></td>
+</tr>
+</tbody>
+</table>
+<p></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id48">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Normas ISO</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta48_129_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Las <strong>normas ISO</strong> son un conjunto de estándares con reconocimiento internacional que fueron creados con la <span>finalidad de ofrecer</span><strong><span> </span>orientación, coordinación, simplificación y unificación de criterios<span> </span></strong><span>a las empresas y organizaciones con el objeto de </span><strong>reducir costes y aumentar la efectividad</strong><span>, así como </span><strong>estandarizar las normas de productos y servicios</strong><span> para las organizaciones internacionales.</span></p>
+<p style="text-align: justify;">Las iniciales ISO son el acrónimo de <a href="https://www.iso.org/home.html">International Organization for Standardization</a>, es una organización no gubernamental, en la que se encuentran presentes 164 países, con 781 comités y subcomités técnicos implicados en el desarrollo de estándares, y que tienen su Secretaria Central en Ginebra, Suiza. Hasta la fecha se han creado más de 23.000 estándares que cubren multitud de áreas de gestión, tecnologías y procesos de producción. </p>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 500px;"><img src="iso-768x281.png" alt="" width="500" height="183" />
+<figcaption class="figcaption"><a href="https://www.iso.org/es/home" target="_blank" class="author" rel="noopener">ISO</a>. <a href="https://www.iso.org/es/home" target="_blank" class="title" rel="noopener"><em>Organización Internacional para la normalización</em></a> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;">Ventajas de las normas ISO:</p>
+<ul>
+<li>Proporcionan elementos para que una organización puede<strong><span> </span>alcanzar y mantener mayores niveles de calidad</strong><span> </span>en el producto o servicio.</li>
+<li>Ayudan a<strong><span> </span>satisfacer las necesidades<span> </span></strong>de un<strong><span> </span>cliente</strong><span> </span>cada vez más exigente.</li>
+<li>Permite a las empresas reducir costos, conseguir más rentabilidad y<strong><span> </span>aumentar los niveles de productividad</strong>.</li>
+<li>Constituye uno de los medios más eficaces para conseguir<span> </span><strong>ventaja competitiva</strong>.</li>
+<li><strong>Reducir rechazos<span> </span></strong>o incidencias en la producción o en la prestación de servicios.</li>
+<li>Implementar<span> </span><strong>procesos de mejora continua</strong>.</li>
+<li>Conseguir un<span> </span><strong>mayor y mejor acceso a grandes clientes y administraciones</strong><span> </span>y a los mercados internacionales.</li>
+</ul>
+<table border="1" style="width: 64.6392%; height: 26px;" class="exe-table">
+<tbody>
+<tr style="height: 26px;">
+<td style="width: 100%; background-color: #bfe3e0; text-align: center; height: 26px;"><span style="font-weight: 400;"><a href="https://drive.google.com/file/d/1t28rgmKf4II0HiHYRrGKXzzvKzUW972I/view?usp=drive_link">Norma ISO 45001 - Sistemas de gestión de la seguridad y salud en el trabajo</a></span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id49">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Normas UNE, UNE-EN y UNE-EN-ISO</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta49_130_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">La <a href="https://www.une.org/">Asociación Española de Normalización, UNE</a>, es el único organismo de normalización en España, y como tal ha sido designado por el <a href="https://www.mincotur.gob.es/es-es/Paginas/index.aspx">Ministerio de Industria y Turismo</a> ante la Comisión Europea. UNE tiene por objeto contribuir a la mayor y mejor implantación de la actividad de normalización y a su desarrollo, orientando al mismo tiempo los esfuerzos de todas las partes interesadas en sus actividades. Para el desarrollo de sus actividades, UNE cuenta con representantes de la práctica totalidad de los sectores industriales españoles.</p>
+<figure class="exe-figure exe-image position-center license-copyright" style="width: 500px;"><img src="imageedit_84_8480131582.png" alt="" width="500" height="353" />
+<figcaption class="figcaption"><a href="https://www.une.org/" target="_blank" class="author" rel="noopener">UNE</a>. <a href="https://www.une.org/" target="_blank" class="title" rel="noopener"><em>Asociación Española de Normalización</em></a> <span class="license"><span class="sep">(</span><span>Todos los derechos reservados</span><span class="sep">)</span></span></figcaption>
+</figure>
+<p style="text-align: justify;">UNE es el organismo de normalización español en el Comité Europeo de Normalización, <strong>CEN</strong>, en el Comité Europeo de Normalización Electrotécnica, <strong>CENELEC</strong>, en el Instituto Europeo de Normas de Telecomunicaciones, <strong>ETSI</strong>, en la Comisión Panamericana de Normas Técnicas, <strong>COPANT</strong>, así como en la Organización Internacional de Normalización, <strong>ISO</strong> y en la Comisión Electrotécnica Internacional, <strong>IEC</strong>.</p>
+<p style="text-align: justify;">Las <strong>normas UNE</strong> (acrónimo de Una Norma Española) se elaboran en <strong>Comités Técnicos de Normalización</strong> (<strong>CTN</strong>) gestionados por los servicios técnicos de UNE y cuya secretaría es, generalmente, desempeñada por una asociación o federación empresarial. Además los CTN están compuestos por una serie de vocales que constituyen una representación equilibrada de toda la cadena de valor del producto o servicio normalizado.</p>
+<p style="text-align: justify;">Las Normas UNE <strong>en general tienen carácter voluntario</strong>, salvo que una Ley, Real Decreto o Reglamento establezca que determinada UNE es de obligado cumplimiento.</p>
+<p style="text-align: justify;">¿Cuál es el proceso de elaboración de una norma UNE?</p>
+<ul>
+<li style="text-align: justify;"><strong>Etapa preliminar</strong>: son todos los trabajos previos consistente en la recopilación de toda la documentación relativa y el análisis de la misma, en base a la cual se considerará la nueva iniciativa.</li>
+<li style="text-align: justify;"><strong>Elaboración del proyecto Norma UNE</strong>: una vez asentadas y establecida las conclusiones del análisis previo, se buscará el consenso entre las partes de toda la actividad que desarrolla el CTN para aprobar un documento que derogue, complemente o mejore la norma establecida previamente o cree una nueva norma sobre un sector aun sin regular.</li>
+<li style="text-align: justify;"><strong>Publicación en el BOE</strong>: el anuncio de esta norma haciendo referencia a la misma por su titulo se publicará en el Boletín Oficial del Estado o BOE. Toda persona física y jurídica tendrá conocimiento de la existencia de la misma y podrá establecer unas alegaciones u observaciones a la misma si las estimas oportunas.</li>
+<li style="text-align: justify;"><strong>Propuesta de la Norma</strong>: recibidas en AENOR las observaciones pertinentes al proyecto, el CTN estudiara las mismas y aprobará la propuesta final de la norma con el fin de que AENOR la certifique y la adopte.</li>
+<li style="text-align: justify;"><strong>Registro, edición y difusión de la Norma UNE</strong>: la norma UNE se publicará por <a href="https://www.aenor.com/">AENOR</a>, notificándolos al BOE, y se promocionará y comercializará a través de AENOR.</li>
+</ul>
+<p style="text-align: justify;">Las <strong>normas EN</strong> (European Norm) son Normas Europeas, que elaboran, proponen y desarrollan los expertos de los diferentes Estados Miembros, de los sectores industriales o tecnológicos dentro de la estructura de normalización del Comité Europeo de Normalización (CEN). Siguen el mismo proceso de tramitación que una norma UNE, pero a nivel Europeo. Tras el mismo, son editadas como normas EN. </p>
+<p style="text-align: justify;">Las <strong>normas UNE-EN</strong> (Una Norma Española-European Norm) son la versión oficial en español de las normas europeas. Son normas adoptadas y armonizadas tras la aprobación del órgano especifico dentro de la estructura de normalización nacional de AENOR.</p>
+<p style="text-align: justify;">Las <strong>normas UNE-EN-ISO</strong> (Una Norma Española-European Norm-International Standardization Organization) son estándares europeos y además estándares internacionales.</p>
+<table border="1" style="width: 64.6392%; height: 26px;" class="exe-table">
+<tbody>
+<tr style="height: 26px;">
+<td style="width: 100%; background-color: #bfe3e0; text-align: center; height: 26px;"><span style="font-weight: 400;"><a href="https://enriquemontalar.com/normas-une-de-obligado-cumplimiento/">¿Las normas UNE son de obligado cumplimiento?</a></span></td>
+</tr>
+</tbody>
+</table>
+<table border="1" style="width: 64.6392%; height: 26px;" class="exe-table">
+<tbody>
+<tr style="height: 26px;">
+<td style="width: 100%; background-color: #bfe3e0; text-align: center; height: 26px;"><span style="font-weight: 400;"><a href="https://tienda.aenor.com/normas/buscador-de-normas">Buscador de normas UNE en AENOR</a></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id31">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">  Instrucciones Técnicas Complementarias (ITC)</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta31_118_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">Se trata de de instrucciones aprobadas por Orden del Ministerio. Tienen rango de reglamento. Son documentos sintéticos que aclaran o complementan las reglamentaciones técnicas vigentes en materia de prevención y seguridad. </p>
+<table border="1" style="width: 64.6392%; height: 26px;" class="exe-table">
+<tbody>
+<tr style="height: 26px;">
+<td style="width: 100%; background-color: #bfe3e0; text-align: center; height: 26px;"><span style="font-weight: 400;"><a href="http://prl.wiki/index.php?title=Instrucci%C3%B3n_T%C3%A9cnica_Complementaria#:~:text=Las%20Instrucci%C3%B3n%20T%C3%A9cnica%20Complementarias%2C%20o,necesarias%20a%20aplicar%2C%20en%20las">PRL Wiki - Instrucciones técnicas complementarias</a></span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="54_los_convenios_colectivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="anexo_i_directivas_especficas_que_desarrollan_la_directiva_89391cee.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_cedec_js.js"></script></body></html>
